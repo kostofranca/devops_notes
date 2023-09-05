@@ -1,0 +1,26 @@
+version: '<DOCKER_COMPOSE_VERSION>'
+
+networks:
+  tasknetwork:
+    driver: bridge
+
+services:
+  <CONTAINER_NAME>:
+    container_name: <CONTAINER_NAME>
+    image: <IMAGE_NAME>:<IMAGE_VERSION>
+    restart: always
+    ports:
+      - <HOST_PORT>:<CONTAINER_PORT>
+    environment:
+      - <ENVIRONMENTAL_VARIABLES>
+      - <ENVIRONMENTAL_VARIABLES>
+    volumes:
+      - <NAME_OF_VOLUME>:<VOLUME_PATH>
+
+    depends on:
+      - <OPTIONAL>
+
+volumes:
+  <NAME_OF_VOLUME>:
+    driver:
+    external: <true-false>
